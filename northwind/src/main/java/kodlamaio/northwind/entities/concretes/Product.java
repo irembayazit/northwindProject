@@ -7,9 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
 @Entity					 // --> veritabanı nesnesi oldugunu belirler
 @Table(name="products")  // --> veri tabanında neye karsılık geldiğini gosterir
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 	
 	@Id //id alanının hangisi oldugu belirtilir
@@ -32,55 +38,4 @@ public class Product {
 	@Column(name="quantity_per_unit")
 	private String quantityPerUnit;
 	
-	public Product() {
-		
-	}
-	
-	public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
-			String quantityPerUnit) {
-		super();
-		this.id = id;
-		this.categoryId = categoryId;
-		this.productName = productName;
-		this.unitPrice = unitPrice;
-		this.unitsInStock = unitsInStock;
-		this.quantityPerUnit = quantityPerUnit;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getCategoryId() {
-		return categoryId;
-	}
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public double getUnitPrice() {
-		return unitPrice;
-	}
-	public void setUnitPrice(double unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-	public short getUnitsInStock() {
-		return unitsInStock;
-	}
-	public void setUnitsInStock(short unitsInStock) {
-		this.unitsInStock = unitsInStock;
-	}
-	public String getQuantityPerUnit() {
-		return quantityPerUnit;
-	}
-	public void setQuantityPerUnit(String quantityPerUnit) {
-		this.quantityPerUnit = quantityPerUnit;
-	}
 }
